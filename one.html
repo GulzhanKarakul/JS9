@@ -13,31 +13,35 @@ if (!userInput) {
 	for(let x of arrayOfUserInputs){
 	    if(isNaN(x)){
 		    result.push(x);
+
+
+
+        
 		}else{
 		    let capitalNumber = showNumberConvertedToString(x);
 			result.push(capitalNumber);
 		}
 	}
-    
+
     document.write("Ваша строка изначально: " + userInput + "<br>" + "Ваша строка с числами замененными на слова: " + result.join(" "));
 }
 
 function showNumberConvertedToString(elem){
     let input = Number(elem);
 	if(input === 0) return 0;
-	
-	
+
+
 	let capitalNumber = '';
 	let thousands = 0;
 	let hundreds =0;
 	let tens = 0;
 	let num = 0;
-	
+
     if(input < 0){
 	    capitalNumber += "минус";
 		input = Math.abs(input); //новый метод...
 	}
-	
+
     if(input >= 1000 && input < 10000){
 	  if(input % 1000 === 0){
 	    thousands = Math.floor(input / 1000);
@@ -56,7 +60,7 @@ function showNumberConvertedToString(elem){
 	    num = input % 1000;
 		thousands = input - num;
 		capitalNumber += showNumberConvertedToString(thousands) + showNumberConvertedToString(num);
-	  
+
 	  }
 	}else if(input >= 100 && input < 1000){
 	  if(input % 100 === 0){
@@ -96,7 +100,7 @@ function showNumberConvertedToString(elem){
 		capitalNumber += showNumberConvertedToString(tens) + showNumberConvertedToString(num);
 	   }
 
-    }else if(input >= 0 && input < 20){	
+    }else if(input >= 0 && input < 20){
 	switch(input){
 	    case 1: capitalNumber += " один"; break;
 		case 2: capitalNumber += " два"; break;
@@ -119,7 +123,7 @@ function showNumberConvertedToString(elem){
 		case 19: capitalNumber += " девятнадцать"; break;
 	  }
 	}
-	
+
 	return capitalNumber;
 }
 
