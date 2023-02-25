@@ -13,10 +13,6 @@ if (!userInput) {
 	for(let x of arrayOfUserInputs){
 	    if(isNaN(x)){
 		    result.push(x);
-
-
-
-        
 		}else{
 		    let capitalNumber = showNumberConvertedToString(x);
 			result.push(capitalNumber);
@@ -50,11 +46,11 @@ function showNumberConvertedToString(elem){
 	       case 2: capitalNumber += " две тысячи"; break;
 	       case 3: capitalNumber += " три тысячи"; break;
 	       case 4: capitalNumber += " четыре тысячи"; break;
-		   case 5: capitalNumber += " пять тысяч"; break;
-		   case 6: capitalNumber += " шесть тысяч"; break;
-		   case 7: capitalNumber += " семь тысяч"; break;
-		   case 8: capitalNumber += " восемь тысяч"; break;
-		   case 9: capitalNumber += "девять тысяч"; break;
+		     case 5: capitalNumber += " пять тысяч"; break;
+		     case 6: capitalNumber += " шесть тысяч"; break;
+		     case 7: capitalNumber += " семь тысяч"; break;
+		     case 8: capitalNumber += " восемь тысяч"; break;
+		     case 9: capitalNumber += "девять тысяч"; break;
 	    }
 	  }else {
 	    num = input % 1000;
@@ -67,14 +63,14 @@ function showNumberConvertedToString(elem){
 	    hundreds = Math.floor(input / 100) % 10;
 	    switch(hundreds){
 	        case 1: capitalNumber += " сто"; break;
-		    case 2: capitalNumber += " двести"; break;
-		    case 3: capitalNumber += " триста"; break;
-		    case 4: capitalNumber += " четыреста"; break;
-		    case 5: capitalNumber += " пятьсот"; break;
-		    case 6: capitalNumber += " шестьсот"; break;
-		    case 7: capitalNumber += " семьсот"; break;
-		    case 8: capitalNumber += " восемьсот"; break;
-		    case 9: capitalNumber += " девятьсот"; break;
+		      case 2: capitalNumber += " двести"; break;
+		      case 3: capitalNumber += " триста"; break;
+		      case 4: capitalNumber += " четыреста"; break;
+		      case 5: capitalNumber += " пятьсот"; break;
+		      case 6: capitalNumber += " шестьсот"; break;
+		      case 7: capitalNumber += " семьсот"; break;
+		      case 8: capitalNumber += " восемьсот"; break;
+		      case 9: capitalNumber += " девятьсот"; break;
 	    }
 	  }else{
 	    num = input % 100;
@@ -84,43 +80,43 @@ function showNumberConvertedToString(elem){
 	} else if(input >= 20 && input < 100){
 	  if(input % 10 === 0){
 	    tens = Math.floor(input / 10) % 10;
-	    switch(tens){
-		   case 2: capitalNumber += " двадцать"; break;
-		   case 3: capitalNumber += " тридцать"; break;
-		  case 4: capitalNumber += " сорок"; break;
-		  case 5: capitalNumber += " пятьдесят"; break;
-		  case 6: capitalNumber += " шестьдесят"; break;
-		  case 7: capitalNumber += " семьдесят"; break;
-		  case 8: capitalNumber += " восемьдесят"; break;
-		  case 9: capitalNumber += " девяносто"; break;
+	   switch(tens){
+		    case 2: capitalNumber += " двадцать"; break;
+		    case 3: capitalNumber += " тридцать"; break;
+		    case 4: capitalNumber += " сорок"; break;
+		    case 5: capitalNumber += " пятьдесят"; break;
+		    case 6: capitalNumber += " шестьдесят"; break;
+		    case 7: capitalNumber += " семьдесят"; break;
+		    case 8: capitalNumber += " восемьдесят"; break;
+		    case 9: capitalNumber += " девяносто"; break;
 	    }
 	   }else{
 	    num = input % 10;
-		tens = input - num;
-		capitalNumber += showNumberConvertedToString(tens) + showNumberConvertedToString(num);
+	  	tens = input - num;
+		  capitalNumber += showNumberConvertedToString(tens) + showNumberConvertedToString(num);
 	   }
 
     }else if(input >= 0 && input < 20){
 	switch(input){
 	    case 1: capitalNumber += " один"; break;
-		case 2: capitalNumber += " два"; break;
-		case 3: capitalNumber += " три"; break;
-		case 4: capitalNumber += " четыре"; break;
-		case 5: capitalNumber += " пять"; break;
-		case 6: capitalNumber += " шесть"; break;
-		case 7: capitalNumber += " семь"; break;
-		case 8: capitalNumber += " восемь"; break;
-		case 9: capitalNumber += " девять"; break;
-		case 10: capitalNumber += " десять"; break;
+		  case 2: capitalNumber += " два"; break;
+		  case 3: capitalNumber += " три"; break;
+		  case 4: capitalNumber += " четыре"; break;
+		  case 5: capitalNumber += " пять"; break;
+		  case 6: capitalNumber += " шесть"; break;
+		  case 7: capitalNumber += " семь"; break;
+		  case 8: capitalNumber += " восемь"; break;
+		  case 9: capitalNumber += " девять"; break;
+		  case 10: capitalNumber += " десять"; break;
 	    case 11: capitalNumber += " одиннадцать"; break;
-		case 12: capitalNumber += " двенадцать"; break;
-		case 13: capitalNumber += " тринадцать"; break;
-		case 14: capitalNumber += " четырнадцать"; break;
-		case 15: capitalNumber += " пятнадцать"; break;
-		case 16: capitalNumber += " шестнадцать"; break;
-		case 17: capitalNumber += " семнадцать"; break;
-		case 18: capitalNumber += " восемнадцать"; break;
-		case 19: capitalNumber += " девятнадцать"; break;
+		  case 12: capitalNumber += " двенадцать"; break;
+		  case 13: capitalNumber += " тринадцать"; break;
+		  case 14: capitalNumber += " четырнадцать"; break;
+		  case 15: capitalNumber += " пятнадцать"; break;
+		  case 16: capitalNumber += " шестнадцать"; break;
+		  case 17: capitalNumber += " семнадцать"; break;
+		  case 18: capitalNumber += " восемнадцать"; break;
+		  case 19: capitalNumber += " девятнадцать"; break;
 	  }
 	}
 
