@@ -19,21 +19,21 @@ if (!functionPrototype) {
     let functionPrototypeAnalysis = showFunctionPartsMeaning(functionPrototype);
 	
 	if(functionPrototypeAnalysis === true){
-	   document.write('<br>' + 'Ваша функция успешно проанализирована!' );
+	   document.write('<br> Ваша функция успешно проанализирована! <br>' );
 	}else{
-	    document.write('Попробуйте еще раз! Запишите прототип коректно' );
+	    document.write('<br> Попробуйте еще раз! Запишите прототип коректно <br>' );
 	}
 }
 
-<!-- test_showFunctionPartsMeaning(); -->
+test_showFunctionPartsMeaning();
 
 function showFunctionPartsMeaning(str){
-str.trim();
-let keyWord = str.slice(0,str.indexOf(" "));
+  str.trim();
+  let keyWord = str.slice(0,str.indexOf(" "));
 
-if(keyWord !== "function"){
+  if(keyWord !== "function"){
     alert("Ключевое слово не соответствует функции"); return false;
-}else{
+ }else{
     let functionName = str.slice((str.indexOf(" ") + 1), str.indexOf("("));
 
     if(functionName === ""){
@@ -47,11 +47,19 @@ if(keyWord !== "function"){
 		let arrayOfAllArguments = stringOfAllArguments.split(",");
 		document.write('Количество аргументов: ' + arrayOfAllArguments.length + '<br>');
 		let newArray = [];
-		for(let i in arrayOfAllArguments){
-		arrayOfAllArguments[i] = arrayOfAllArguments[i].trim();
-		let miniArray = arrayOfAllArguments[i].split(" ");
-		newArray.push(miniArray);
-		}
+        for (let i in arrayOfAllArguments) {
+            arrayOfAllArguments[i] = arrayOfAllArguments[i].trim();
+            let miniArray = [];
+            if (arrayOfAllArguments[i].includes("=")) {
+                miniArray = arrayOfAllArguments[i].split("=");
+                miniArray[0] = miniArray[0].trim();
+                miniArray[1] = miniArray[1].trim();
+            } else {
+                miniArray[0] = arrayOfAllArguments[i];
+            }
+            newArray.push(miniArray);
+        }
+
 		
 		for(let x of newArray){
 		    if(x.length === 1){
@@ -67,7 +75,7 @@ if(keyWord !== "function"){
 
 
 function test_showFunctionPartsMeaning(){
-    console.assert(showFunctionPartsMeaning("function foo(index, len, flag = true)") === true, "Test 1 Failed");
+    console.assert(showFunctionPartsMeaning("function foo(index, len, flag=true)") === true, "Test 1 Failed");
     console.assert(showFunctionPartsMeaning("functions foo(index, len, flag = true)") === false, "Test 2 Failed");
     console.assert(showFunctionPartsMeaning("function (index, len, flag = true)") === false, "Test 3 Failed");
     console.assert(showFunctionPartsMeaning("function 9bh(index, len, flag = true)") === false, "Test 4 Failed");
